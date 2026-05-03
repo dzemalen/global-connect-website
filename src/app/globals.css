@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased;
+    font-family: var(--font-inter);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-jakarta);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-blue-100 text-blue-900;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-amber {
+    @apply bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-base {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-outer {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.marquee-inner {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: marquee 32s linear infinite;
+  width: max-content;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Phone mockup glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(37, 99, 235, 0.15), 0 40px 80px rgba(0,0,0,0.15); }
+  50% { box-shadow: 0 0 60px rgba(37, 99, 235, 0.28), 0 40px 80px rgba(0,0,0,0.18); }
+}
+
+.phone-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
