@@ -31,9 +31,9 @@ const pillars = [
     icon: Calendar,
     title: 'Events made for travelers',
     desc: 'Meetups, experiences, and local events curated for people who are always on the move.',
-    color: 'from-purple-500 to-violet-600',
-    bg: 'bg-purple-50',
-    border: 'border-purple-100',
+    color: 'from-blue-500 to-sky-600',
+    bg: 'bg-blue-50',
+    border: 'border-blue-100',
   },
 ]
 

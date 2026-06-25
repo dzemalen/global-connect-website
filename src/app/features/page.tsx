@@ -21,6 +21,7 @@ const tier1Features = [
     title: 'Map-Based Discovery',
     desc: 'See travelers and locals on a real-time interactive map. Every pin represents a real person nearby — tap any pin to view their profile, nationality, and bio, then start a conversation.',
     screens: ['map'],
+    image: '/app/screens/nearby-travelers.png',
     gradient: 'from-blue-500 to-blue-600',
     bg: 'bg-blue-50',
     details: [
@@ -35,6 +36,7 @@ const tier1Features = [
     icon: Globe,
     title: 'Countrymen & Global Modes',
     desc: 'The defining feature of Global Connect. Switch between seeing only people from your own nationality (Countrymen Mode) or everyone around you (Global Mode) with a single tap.',
+    image: '/app/screens/nearby-travelers.png',
     gradient: 'from-amber-400 to-orange-500',
     bg: 'bg-amber-50',
     details: [
@@ -64,7 +66,7 @@ const tier1Features = [
     icon: MessageCircle,
     title: 'Private & Group Chat',
     desc: 'Message anyone you meet directly or create private group conversations. Plan a day trip, a restaurant visit, or just stay in touch with travelers you\'ve connected with.',
-    gradient: 'from-cyan-500 to-teal-500',
+    gradient: 'from-cyan-500 to-blue-600',
     bg: 'bg-cyan-50',
     details: [
       'One-on-one private messaging',
@@ -94,8 +96,8 @@ const tier1Features = [
     title: 'Events Discovery',
     desc: 'Discover curated local events and festivals happening around you, plus community-posted local meetups. Never miss what\'s on in your city.',
     screens: ['events'],
-    gradient: 'from-purple-500 to-violet-600',
-    bg: 'bg-purple-50',
+    gradient: 'from-blue-500 to-sky-600',
+    bg: 'bg-blue-50',
     details: [
       'Admin-curated festivals and events',
       'Community-created local events',
@@ -218,7 +220,7 @@ export default function FeaturesPage() {
                     </ul>
                   </AnimatedSection>
                   <AnimatedSection direction={isEven ? 'right' : 'left'} className={`flex justify-center ${!isEven ? 'lg:order-1' : ''}`}>
-                    <PhoneMockup screen={feature.screens ? screen : 'map'} size="lg" className="animate-float" />
+                    <PhoneMockup screen={feature.screens ? screen : 'map'} image={feature.image} alt={`Global Connect — ${feature.title}`} size="lg" className="animate-float" />
                   </AnimatedSection>
                 </div>
               )

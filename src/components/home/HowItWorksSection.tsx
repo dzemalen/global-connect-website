@@ -29,14 +29,14 @@ const steps = [
     icon: Compass,
     title: 'Explore, chat, discover',
     desc: 'Join the city chat, browse local tips, find events, or tap directly on a pin to connect one-on-one. Your city\'s community is already active — just jump in.',
-    gradient: 'from-purple-500 to-violet-600',
+    gradient: 'from-blue-500 to-sky-600',
   },
   {
     number: '05',
     icon: Share2,
     title: 'Share your journey',
     desc: 'Post memories, write tips, review places, and build your travel identity. The more you contribute, the richer your experience — and the community\'s.',
-    gradient: 'from-rose-500 to-pink-500',
+    gradient: 'from-sky-500 to-cyan-500',
   },
 ]
 

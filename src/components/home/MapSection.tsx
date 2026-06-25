@@ -12,7 +12,7 @@ export default function MapSection() {
         <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dot-grid" width="32" height="32" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#60A5FA" />
+              <circle cx="2" cy="2" r="1.5" fill="#4BADE6" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dot-grid)" />
@@ -24,7 +24,7 @@ export default function MapSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="left" className="flex justify-center lg:justify-start">
             <div className="relative animate-float-delayed">
-              <PhoneMockup screen="map" size="lg" />
+              <PhoneMockup screen="map" image="/app/screens/nearby-travelers.png" alt="Global Connect — nearby travelers on the map" size="lg" />
 
               {/* Floating stat cards */}
               <div className="absolute -right-8 top-16 px-4 py-3 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl">

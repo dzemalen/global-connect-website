@@ -29,7 +29,7 @@ export default function TipsEventsSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="left" className="flex justify-center lg:justify-start order-last lg:order-first">
             <div className="relative animate-float">
-              <PhoneMockup screen="tips" size="lg" />
+              <PhoneMockup image="/app/screens/feed-mountains.png" alt="Global Connect — community feed of travelers sharing places" size="lg" />
               <div className="absolute -right-8 top-24 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
                 <div className="flex items-center gap-2">
                   <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
@@ -38,7 +38,7 @@ export default function TipsEventsSection() {
               </div>
               <div className="absolute -left-8 bottom-24 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-purple-500" />
+                  <Calendar className="w-3.5 h-3.5 text-blue-500" />
                   <div>
                     <p className="text-xs font-semibold text-slate-800">Sunset Rooftop Social</p>
                     <p className="text-[10px] text-slate-500">Today, 7PM · 34 going</p>
@@ -76,8 +76,8 @@ export default function TipsEventsSection() {
               {/* Events block */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <Calendar className="w-4 h-4 text-purple-600" />
+                  <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center">
+                    <Calendar className="w-4 h-4 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 font-jakarta">Events Nearby</h3>
                 </div>

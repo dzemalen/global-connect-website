@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeader from '@/components/ui/SectionHeader'
+import PhoneMockup from '@/components/ui/PhoneMockup'
 import { Users, Globe, ChevronRight } from 'lucide-react'
 
 type Mode = 'countrymen' | 'global'
@@ -101,51 +102,14 @@ export default function DualModeSection() {
                     </div>
                   </div>
 
-                  {/* Visual */}
+                  {/* Visual: real app screenshot (shows the Countrymen / Global toggle) */}
                   <div className="hidden lg:flex items-center justify-center p-10 lg:p-16 relative">
-                    <div className="relative">
-                      {/* Map mockup for countrymen mode */}
-                      <div className="w-80 h-80 rounded-3xl bg-white shadow-xl overflow-hidden border border-amber-100 relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-900 to-orange-900">
-                          <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <pattern id="grid-amber" width="24" height="24" patternUnits="userSpaceOnUse">
-                                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#FCD34D" strokeWidth="0.5" />
-                              </pattern>
-                            </defs>
-                            <rect width="100%" height="100%" fill="url(#grid-amber)" />
-                          </svg>
-                        </div>
-                        {/* UK pins only */}
-                        {[
-                          { x: '25%', y: '30%' }, { x: '55%', y: '25%' },
-                          { x: '70%', y: '50%' }, { x: '35%', y: '60%' },
-                          { x: '60%', y: '72%' },
-                        ].map((pos, i) => (
-                          <div
-                            key={i}
-                            className="absolute w-8 h-8 rounded-full border-2 border-amber-400 bg-amber-500/80 flex items-center justify-center text-base shadow-lg"
-                            style={{ left: pos.x, top: pos.y }}
-                          >
-                            🇬🇧
-                          </div>
-                        ))}
-                        {/* Filter indicator */}
-                        <div className="absolute top-3 left-3 right-3 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5">
-                          <span className="text-sm">🇬🇧</span>
-                          <span className="text-xs font-semibold text-slate-800">Showing UK travelers (5)</span>
-                        </div>
-                      </div>
-
-                      {/* Decorative elements */}
-                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-amber-200/40 backdrop-blur-sm border border-amber-200 flex items-center justify-center text-3xl shadow-sm">
-                        🇬🇧
-                      </div>
-                      <div className="absolute -bottom-4 -left-4 px-4 py-2.5 bg-white rounded-xl shadow-card border border-amber-100">
-                        <p className="text-xs font-semibold text-slate-800">5 countrymen nearby</p>
-                        <p className="text-[10px] text-slate-500">Bangkok, Thailand</p>
-                      </div>
-                    </div>
+                    <PhoneMockup
+                      image="/app/screens/nearby-travelers.png"
+                      alt="Global Connect — Countrymen mode showing nearby travelers"
+                      size="md"
+                      className="animate-float"
+                    />
                   </div>
                 </div>
               </div>
@@ -198,52 +162,14 @@ export default function DualModeSection() {
                     </div>
                   </div>
 
-                  {/* Visual */}
+                  {/* Visual: real app screenshot (one tap switches Countrymen / Global) */}
                   <div className="hidden lg:flex items-center justify-center p-10 lg:p-16 relative">
-                    <div className="relative">
-                      <div className="w-80 h-80 rounded-3xl bg-white shadow-xl overflow-hidden border border-blue-100 relative">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-slate-900">
-                          <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <pattern id="grid-blue" width="24" height="24" patternUnits="userSpaceOnUse">
-                                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#60A5FA" strokeWidth="0.5" />
-                              </pattern>
-                            </defs>
-                            <rect width="100%" height="100%" fill="url(#grid-blue)" />
-                          </svg>
-                        </div>
-                        {/* Multi-national pins */}
-                        {[
-                          { x: '15%', y: '20%', flag: '🇬🇧', color: '#3B82F6' },
-                          { x: '45%', y: '15%', flag: '🇯🇵', color: '#8B5CF6' },
-                          { x: '70%', y: '30%', flag: '🇩🇪', color: '#10B981' },
-                          { x: '25%', y: '55%', flag: '🇲🇽', color: '#F59E0B' },
-                          { x: '60%', y: '50%', flag: '🇹🇭', color: '#EF4444' },
-                          { x: '40%', y: '70%', flag: '🇧🇷', color: '#06B6D4' },
-                          { x: '75%', y: '68%', flag: '🇮🇳', color: '#EC4899' },
-                        ].map((pin, i) => (
-                          <div
-                            key={i}
-                            className="absolute w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-base shadow-lg"
-                            style={{ left: pin.x, top: pin.y, backgroundColor: pin.color }}
-                          >
-                            {pin.flag}
-                          </div>
-                        ))}
-                        <div className="absolute top-3 left-3 right-3 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5">
-                          <Globe className="w-3 h-3 text-blue-600" />
-                          <span className="text-xs font-semibold text-slate-800">Showing everyone (24)</span>
-                        </div>
-                      </div>
-
-                      <div className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-blue-200/40 backdrop-blur-sm border border-blue-200 flex items-center justify-center text-3xl shadow-sm">
-                        🌍
-                      </div>
-                      <div className="absolute -bottom-4 -left-4 px-4 py-2.5 bg-white rounded-xl shadow-card border border-blue-100">
-                        <p className="text-xs font-semibold text-slate-800">24 people nearby</p>
-                        <p className="text-[10px] text-slate-500">18 nationalities</p>
-                      </div>
-                    </div>
+                    <PhoneMockup
+                      image="/app/screens/nearby-travelers.png"
+                      alt="Global Connect — switch between Countrymen and Global modes"
+                      size="md"
+                      className="animate-float"
+                    />
                   </div>
                 </div>
               </div>

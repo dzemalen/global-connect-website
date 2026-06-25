@@ -63,8 +63,8 @@ const steps = [
       'Browse tips by category to find what you\'re looking for',
       'RSVP to events to meet people with shared interests',
     ],
-    gradient: 'from-purple-500 to-violet-600',
-    bg: 'bg-purple-50',
+    gradient: 'from-blue-500 to-sky-600',
+    bg: 'bg-blue-50',
   },
   {
     number: '05',
@@ -77,8 +77,8 @@ const steps = [
       'Mark countries on your travel map as you explore',
       'Your tips help future travelers — be specific and genuine',
     ],
-    gradient: 'from-rose-500 to-pink-500',
-    bg: 'bg-rose-50',
+    gradient: 'from-sky-500 to-cyan-500',
+    bg: 'bg-sky-50',
   },
 ]
 

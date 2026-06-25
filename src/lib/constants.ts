@@ -1,11 +1,21 @@
 export const APP_NAME = 'Global Connect'
-export const APP_TAGLINE = 'Every city feels like home.'
+export const APP_TAGLINE = 'Go Global. Stay Connected.'
 export const APP_DESCRIPTION =
   'Discover travelers, locals, tips, and events around you. Join city chats, find your countrymen abroad, or connect globally.'
 
 export const CONTACT_EMAIL = 'contact@global-connect.ai'
 export const PARTNER_URL = 'https://www.global-connect.ai/partner'
 export const CONTACT_URL = '/contact'
+
+// --- App store links ---------------------------------------------------------
+// The app is not published yet. Leave these empty to keep the "Coming soon"
+// buttons (which point users to the contact / notify page). When the app goes
+// live, paste the real store URLs here and flip APP_LAUNCHED to true — the
+// download buttons across the whole site update automatically.
+export const APP_STORE_URL = '' // e.g. 'https://apps.apple.com/app/idXXXXXXXXX'
+export const GOOGLE_PLAY_URL = '' // e.g. 'https://play.google.com/store/apps/details?id=...'
+export const APP_LAUNCHED = false
+export const NOTIFY_URL = '/contact' // where "Coming soon" buttons send users
 
 export const FEATURES = [
   {

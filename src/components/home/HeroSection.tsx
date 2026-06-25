@@ -22,7 +22,7 @@ export default function HeroSection() {
         <svg className="absolute inset-0 w-full h-full opacity-[0.032]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="hero-dots" width="32" height="32" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#2563EB" />
+              <circle cx="2" cy="2" r="1.5" fill="#1577B8" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#hero-dots)" />
@@ -114,7 +114,7 @@ export default function HeroSection() {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative animate-float">
-              <PhoneMockup screen="map" size="lg" className="phone-glow" />
+              <PhoneMockup screen="map" image="/app/screens/nearby-travelers.png" alt="Global Connect — nearby travelers on the map" size="lg" className="phone-glow" />
 
               {floatingCards.map((card, i) => (
                 <motion.div

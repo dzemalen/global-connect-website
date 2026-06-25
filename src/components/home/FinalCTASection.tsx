@@ -1,5 +1,6 @@
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Globe, Smartphone, Lock } from 'lucide-react'
 
 const flags = ['🇬🇧', '🇯🇵', '🇧🇷', '🇩🇪', '🇮🇳', '🇲🇽', '🇦🇺', '🇺🇸', '🇫🇷', '🇰🇷', '🇪🇸', '🇨🇦']
@@ -17,7 +18,7 @@ export default function FinalCTASection() {
         <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dot-grid-cta" width="32" height="32" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#60A5FA" />
+              <circle cx="2" cy="2" r="1.5" fill="#4BADE6" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dot-grid-cta)" />
@@ -30,16 +31,27 @@ export default function FinalCTASection() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMaxYMid slice"
         >
-          <circle cx="400" cy="300" r="280" stroke="#60A5FA" strokeWidth="1" />
-          <circle cx="400" cy="300" r="200" stroke="#60A5FA" strokeWidth="0.6" />
-          <circle cx="400" cy="300" r="130" stroke="#60A5FA" strokeWidth="0.4" />
-          <line x1="120" y1="300" x2="680" y2="300" stroke="#60A5FA" strokeWidth="0.4" />
-          <line x1="400" y1="20" x2="400" y2="580" stroke="#60A5FA" strokeWidth="0.4" />
+          <circle cx="400" cy="300" r="280" stroke="#4BADE6" strokeWidth="1" />
+          <circle cx="400" cy="300" r="200" stroke="#4BADE6" strokeWidth="0.6" />
+          <circle cx="400" cy="300" r="130" stroke="#4BADE6" strokeWidth="0.4" />
+          <line x1="120" y1="300" x2="680" y2="300" stroke="#4BADE6" strokeWidth="0.4" />
+          <line x1="400" y1="20" x2="400" y2="580" stroke="#4BADE6" strokeWidth="0.4" />
         </svg>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto container-padding text-center">
         <AnimatedSection>
+          {/* Real app icon */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/brand/app-icon.png"
+              alt="Global Connect app icon"
+              width={96}
+              height={96}
+              className="w-20 h-20 rounded-[1.25rem] shadow-glow-blue ring-1 ring-white/15"
+            />
+          </div>
+
           {/* Flag row */}
           <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
             {flags.map((flag, i) => (

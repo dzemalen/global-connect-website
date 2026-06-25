@@ -24,8 +24,8 @@ const contactOptions = [
     desc: 'Interested in partnering with Global Connect? We\'d love to talk.',
     action: 'View Partners page',
     href: '/for-partners',
-    bg: 'bg-purple-50',
-    color: 'text-purple-600',
+    bg: 'bg-blue-50',
+    color: 'text-blue-600',
   },
 ]
 

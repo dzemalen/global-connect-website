@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Globe } from 'lucide-react'
+import { Menu, X, Download } from 'lucide-react'
 import AppStoreButtons from '@/components/ui/AppStoreButtons'
 
 const navLinks = [
@@ -51,13 +52,15 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center shadow-md group-hover:shadow-glow-blue transition-shadow duration-300">
-                <Globe className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-extrabold text-lg text-slate-900 font-jakarta tracking-tight">
-                Global<span className="text-blue-600">Connect</span>
-              </span>
+            <Link href="/" className="flex items-center group" aria-label="Global Connect — Home">
+              <Image
+                src="/brand/logo.png"
+                alt="Global Connect"
+                width={404}
+                height={268}
+                priority
+                className="h-11 lg:h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -89,7 +92,7 @@ export default function Navbar() {
                 href="/#download"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white text-sm font-semibold shadow-md hover:shadow-glow-blue hover:opacity-95 transition-all duration-200"
               >
-                <Globe className="w-4 h-4" />
+                <Download className="w-4 h-4" />
                 Download App
               </Link>
             </div>
