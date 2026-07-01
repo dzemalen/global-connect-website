@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeader from '@/components/ui/SectionHeader'
+import { submitLead } from '@/lib/submitLead'
 import { Users, TrendingUp, Globe, Star, ArrowRight, CheckCircle } from 'lucide-react'
 
 const partnerTypes = [
@@ -46,6 +47,7 @@ const processSteps = [
 
 function PartnerForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [fields, setFields] = useState({
     businessName: '',
     businessType: 'Restaurant / Café',
@@ -53,19 +55,36 @@ function PartnerForm() {
     city: '',
     description: '',
   })
+  const [company, setCompany] = useState('') // honeypot
   const [error, setError] = useState('')
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!fields.businessName.trim() || !fields.email.trim() || !fields.city.trim()) {
       setError('Please fill in your business name, email, and city.')
       return
     }
-    const subject = encodeURIComponent(`Partnership Application — ${fields.businessName}`)
-    const body = encodeURIComponent(
-      `Business name: ${fields.businessName}\nBusiness type: ${fields.businessType}\nContact email: ${fields.email}\nCity & country: ${fields.city}\n\n${fields.description}`
-    )
-    window.location.href = `mailto:contact@global-connect.ai?subject=${subject}&body=${body}`
+    setError('')
+    setSubmitting(true)
+
+    const stored = await submitLead({
+      type: 'partner',
+      name: fields.businessName,
+      email: fields.email,
+      message: fields.description,
+      details: { businessType: fields.businessType, city: fields.city },
+      company,
+    })
+
+    if (!stored) {
+      // Fallback: open the visitor's email client with the details pre-filled.
+      const subject = encodeURIComponent(`Partnership Application — ${fields.businessName}`)
+      const body = encodeURIComponent(
+        `Business name: ${fields.businessName}\nBusiness type: ${fields.businessType}\nContact email: ${fields.email}\nCity & country: ${fields.city}\n\n${fields.description}`
+      )
+      window.location.href = `mailto:contact@global-connect.ai?subject=${subject}&body=${body}`
+    }
+    setSubmitting(false)
     setSubmitted(true)
   }
 
@@ -73,15 +92,9 @@ function PartnerForm() {
     return (
       <div className="mt-10 text-center py-16">
         <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-5" />
-        <h3 className="text-2xl font-bold text-slate-900 font-jakarta mb-3">Application sent!</h3>
+        <h3 className="text-2xl font-bold text-slate-900 font-jakarta mb-3">Application received!</h3>
         <p className="text-slate-600 max-w-sm mx-auto">
-          Your email client should have opened with the details pre-filled. We will review your application and get back to you within 3 business days.
-        </p>
-        <p className="mt-4 text-sm text-slate-400">
-          If your email client did not open, send your details directly to{' '}
-          <a href="mailto:contact@global-connect.ai" className="text-blue-600 hover:underline">
-            contact@global-connect.ai
-          </a>
+          Thanks — we&apos;ll review your application and get back to you within 3 business days.
         </p>
       </div>
     )
@@ -89,6 +102,17 @@ function PartnerForm() {
 
   return (
     <form className="mt-10 space-y-5" onSubmit={handleSubmit} noValidate>
+      {/* Honeypot (hidden from real users) */}
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        value={company}
+        onChange={(e) => setCompany(e.target.value)}
+        className="hidden"
+        aria-hidden="true"
+      />
       {error && (
         <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{error}</p>
       )}
@@ -159,10 +183,11 @@ function PartnerForm() {
       </div>
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold text-base shadow-md hover:shadow-glow-blue hover:opacity-95 transition-all duration-200"
+        disabled={submitting}
+        className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold text-base shadow-md hover:shadow-glow-blue hover:opacity-95 transition-all duration-200 disabled:opacity-60"
       >
-        Submit partnership application
-        <ArrowRight className="w-5 h-5" />
+        {submitting ? 'Sending…' : 'Submit partnership application'}
+        {!submitting && <ArrowRight className="w-5 h-5" />}
       </button>
       <p className="text-xs text-center text-slate-400">
         We review every application personally and respond within 3 business days.

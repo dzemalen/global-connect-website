@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AnimatedSection from '@/components/ui/AnimatedSection'
+import ContactForm from '@/components/forms/ContactForm'
 import { Mail, Store } from 'lucide-react'
 import Link from 'next/link'
 
@@ -73,34 +74,7 @@ export default function ContactPage() {
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-extrabold text-slate-900 font-jakarta mb-2 text-center">Send us a message</h2>
               <p className="text-slate-500 text-center mb-10">We typically respond within one business day.</p>
-              <form
-                className="space-y-5"
-                action="mailto:contact@global-connect.ai"
-                method="get"
-                encType="text/plain"
-              >
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="contact-name" className="block text-sm font-medium text-slate-700 mb-2">Your name</label>
-                    <input id="contact-name" name="name" type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="First Last" />
-                  </div>
-                  <div>
-                    <label htmlFor="contact-email" className="block text-sm font-medium text-slate-700 mb-2">Email address</label>
-                    <input id="contact-email" name="from" type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="contact-subject" className="block text-sm font-medium text-slate-700 mb-2">Subject</label>
-                  <input id="contact-subject" name="subject" type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="What is this about?" />
-                </div>
-                <div>
-                  <label htmlFor="contact-message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                  <textarea id="contact-message" name="body" rows={5} className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="Tell us what is on your mind..." />
-                </div>
-                <button type="submit" className="w-full px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold text-base shadow-md hover:opacity-95 transition-opacity">
-                  Send message
-                </button>
-              </form>
+              <ContactForm />
               <p className="text-center text-xs text-slate-400 mt-4">
                 Or email us directly at{' '}
                 <a href="mailto:contact@global-connect.ai" className="text-blue-500 hover:underline">

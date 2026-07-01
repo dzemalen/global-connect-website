@@ -114,14 +114,59 @@ global-connect-website/
 
 ## Deploying to Vercel
 
-This site is optimized for [Vercel](https://vercel.com/) (it builds to fully
-static pages and needs no environment variables).
+This site is optimized for [Vercel](https://vercel.com/). It builds to static
+pages plus one serverless function (`/api/leads`, see below).
 
 1. Install/login: `npx vercel login`
 2. Deploy: `npx vercel --prod` (accept the auto-detected Next.js settings) —
    or import the GitHub repo at <https://vercel.com/new>.
 3. Add your custom domain in **Project → Settings → Domains**; Vercel then shows
    the exact DNS records to add at your domain registrar.
+
+---
+
+## Form submissions (leads)
+
+The **Contact** and **For Partners** forms post to the `/api/leads` serverless
+route ([`src/app/api/leads/route.ts`](src/app/api/leads/route.ts)), which stores
+each submission in a **Vercel Postgres** database. If no database is connected
+yet, the route returns `503` and the forms automatically fall back to opening the
+visitor's email client (`mailto:` to `contact@global-connect.ai`) — so nothing
+breaks before setup.
+
+### One-time setup on Vercel
+
+1. Vercel dashboard → **Storage** → **Create Database** → **Postgres** → connect
+   it to this project. Vercel injects the connection string as an env var
+   (`POSTGRES_URL`) automatically.
+2. **Redeploy** (Vercel does this automatically when the DB is connected, or run
+   `npx vercel --prod`).
+
+That's it — the `leads` table is created automatically on the first submission.
+
+### Viewing / exporting leads
+
+In the Vercel dashboard → **Storage** → your database → **Query**, run:
+
+```sql
+select created_at, type, name, email, message, details
+from leads
+order by created_at desc;
+```
+
+Each row is one submission. `type` is `contact` or `partner`; `details` holds the
+extra fields (subject for contact; business type + city for partners).
+
+### Testing locally
+
+Pull the env vars once, then run the dev server:
+
+```bash
+npx vercel env pull .env.development.local
+npm run dev
+```
+
+Submissions are protected by a simple honeypot field for basic spam filtering.
 
 ---
 
