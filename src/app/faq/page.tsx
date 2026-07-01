@@ -66,7 +66,7 @@ const faqGroups = [
       },
       {
         q: "I didn't find an answer to my question. Who can I contact?",
-        a: "Still have questions or need help? Don't hesitate to contact us! You can send an email directly to contact@global-connect.ai. We're happy to help!",
+        a: "Still have questions or need help? Don't hesitate to contact us! You can send an email directly to nidal@global-connect.ai. We're happy to help!",
       },
     ],
   },

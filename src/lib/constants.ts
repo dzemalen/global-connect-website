@@ -3,7 +3,7 @@ export const APP_TAGLINE = 'Go Global. Stay Connected.'
 export const APP_DESCRIPTION =
   'Discover travelers, locals, and tips around you. Join city chats, find your countrymen abroad, or connect globally.'
 
-export const CONTACT_EMAIL = 'contact@global-connect.ai'
+export const CONTACT_EMAIL = 'nidal@global-connect.ai'
 export const PARTNER_URL = 'https://www.global-connect.ai/partner'
 export const CONTACT_URL = '/contact'
 

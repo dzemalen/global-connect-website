@@ -71,7 +71,7 @@ Violations may result in immediate account suspension or termination.`,
   },
   {
     title: '12. Contact',
-    content: 'For questions about these Terms, please contact us at contact@global-connect.ai.',
+    content: 'For questions about these Terms, please contact us at nidal@global-connect.ai.',
   },
 ]
 

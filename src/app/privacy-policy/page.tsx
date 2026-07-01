@@ -79,7 +79,7 @@ const sections: Section[] = [
   {
     title: '9. Contact Us',
     intro: 'If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:',
-    closing: 'contact@global-connect.ai\n\nGlobal Connect AS\nOrg. nr. 935687519\nAddress available upon request',
+    closing: 'nidal@global-connect.ai\n\nGlobal Connect AS\nOrg. nr. 935687519\nAddress available upon request',
   },
 ]
 
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                       line ? (
                         i === 0 ? (
                           <p key={i} className="my-2">
-                            <a href="mailto:contact@global-connect.ai" className="text-blue-600 hover:underline font-medium">
+                            <a href="mailto:nidal@global-connect.ai" className="text-blue-600 hover:underline font-medium">
                               {line}
                             </a>
                           </p>

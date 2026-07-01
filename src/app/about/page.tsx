@@ -123,8 +123,8 @@ export default function AboutPage() {
             </p>
             <p className="text-sm text-slate-400 mt-4">
               For questions, partnerships, or press enquiries, reach us at{' '}
-              <a href="mailto:contact@global-connect.ai" className="text-blue-600 hover:underline">
-                contact@global-connect.ai
+              <a href="mailto:nidal@global-connect.ai" className="text-blue-600 hover:underline">
+                nidal@global-connect.ai
               </a>
             </p>
           </AnimatedSection>
