@@ -25,13 +25,12 @@ export const metadata: Metadata = {
     template: '%s | Global Connect',
   },
   description:
-    'Global Connect helps travelers, expats, and locals discover authentic experiences and meet people nearby. Find travelers on a map, join city chats, get local tips, and discover events — wherever you are.',
+    'Global Connect helps travelers, expats, and locals discover authentic experiences and meet people nearby. Find travelers on a map, join city chats, and get local tips — wherever you are.',
   keywords: [
     'travel app',
     'meet travelers',
     'discover locals',
     'local travel tips',
-    'events nearby',
     'travel community app',
     'expat social app',
     'backpacker social app',
@@ -49,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'Global Connect',
     title: 'Global Connect — Meet Travelers & Discover Local Experiences',
     description:
-      'Discover travelers, locals, tips, and events around you. Join city chats, find your countrymen abroad, or go global. Coming to iOS & Android.',
+      'Discover travelers, locals, and tips around you. Join city chats, find your countrymen abroad, or go global. Coming to iOS & Android.',
     images: [
       {
         url: '/og-image.png',
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Global Connect — Meet Travelers & Discover Local Experiences',
     description:
-      'The app that turns any city into your community. Map discovery, city chats, local tips, events, and more.',
+      'The app that turns any city into your community. Map discovery, city chats, local tips, and more.',
     images: ['/og-image.png'],
   },
   robots: {

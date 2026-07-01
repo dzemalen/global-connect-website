@@ -24,7 +24,7 @@ export default function MapSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="left" className="flex justify-center lg:justify-start">
             <div className="relative animate-float-delayed">
-              <PhoneMockup screen="map" image="/app/screens/nearby-travelers.png" alt="Global Connect — nearby travelers on the map" size="lg" />
+              <PhoneMockup screen="map" image="/app/screens/map.jpg" alt="Global Connect — live map of travelers around you" size="lg" />
 
               {/* Floating stat cards */}
               <div className="absolute -right-8 top-16 px-4 py-3 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl">

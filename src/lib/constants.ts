@@ -1,7 +1,7 @@
 export const APP_NAME = 'Global Connect'
 export const APP_TAGLINE = 'Go Global. Stay Connected.'
 export const APP_DESCRIPTION =
-  'Discover travelers, locals, tips, and events around you. Join city chats, find your countrymen abroad, or connect globally.'
+  'Discover travelers, locals, and tips around you. Join city chats, find your countrymen abroad, or connect globally.'
 
 export const CONTACT_EMAIL = 'contact@global-connect.ai'
 export const PARTNER_URL = 'https://www.global-connect.ai/partner'
@@ -51,12 +51,12 @@ export const FEATURES = [
     color: 'amber',
   },
   {
-    id: 'events',
-    icon: 'Calendar',
-    title: 'Events Nearby',
+    id: 'best-restaurants',
+    icon: 'UtensilsCrossed',
+    title: 'Best Restaurants',
     description:
-      'Discover local events, meetups, and experiences happening around you. Never miss what\'s going on in your city.',
-    color: 'purple',
+      'Discover standout restaurants recommended by the community and curated by Global Connect, with reviews and locations.',
+    color: 'blue',
   },
   {
     id: 'travel-memories',
@@ -72,7 +72,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Is Global Connect free to use?',
     answer:
-      'Yes, Global Connect is free to download and use. The core features — map discovery, city chat, tips, and events — are completely free. We offer premium features for power users.',
+      'Yes, Global Connect is free to download and use. The core features — map discovery, city chat, and tips — are completely free. We offer premium features for power users.',
   },
   {
     question: 'How does Countrymen Mode work?',
@@ -87,7 +87,7 @@ export const FAQ_ITEMS = [
   {
     question: 'Can I use Global Connect at home, not just when traveling?',
     answer:
-      'Absolutely. Many users use Global Connect in their home city to meet international visitors, join city chats, and discover local events. The app works anywhere in the world.',
+      'Absolutely. Many users use Global Connect in their home city to meet international visitors, join city chats, and discover local tips. The app works anywhere in the world.',
   },
   {
     question: 'What is Global Mode vs Countrymen Mode?',
@@ -95,8 +95,8 @@ export const FAQ_ITEMS = [
       'Global Mode shows you everyone nearby — travelers and locals from any country. Countrymen Mode narrows the view to people from your own nationality. You can switch between them anytime, instantly.',
   },
   {
-    question: 'How do I find events nearby?',
+    question: 'How do local tips and recommendations work?',
     answer:
-      'The Events tab shows you upcoming events in your current location. You can filter by type, date, and distance. Community members also post their own events and meetups.',
+      'Every city has a community-curated guide. Browse tips and restaurant recommendations from real travelers, filter by category or by your countrymen, upvote what\'s helpful, and share your own.',
   },
 ]

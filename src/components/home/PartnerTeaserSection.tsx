@@ -4,7 +4,7 @@ import { Store, Users, TrendingUp, ArrowRight } from 'lucide-react'
 
 const partnerTypes = [
   { emoji: '🍽️', label: 'Restaurants & Cafés' },
-  { emoji: '🎭', label: 'Event Organizers' },
+  { emoji: '🏛️', label: 'Attractions & Museums' },
   { emoji: '🏨', label: 'Hostels & Hotels' },
   { emoji: '🛖', label: 'Local Venues' },
   { emoji: '🗺️', label: 'Tour Operators' },
@@ -82,7 +82,7 @@ export default function PartnerTeaserSection() {
                 { value: 'Free', label: 'No cost for users — built-in audience' },
                 { value: 'Local', label: 'Geo-targeted to your city or area' },
                 { value: 'Tips', label: 'Appear in community tip recommendations' },
-                { value: 'Events', label: 'Promote your events to nearby travelers' },
+                { value: 'Reviews', label: 'Get discovered through traveler reviews' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-white/10 rounded-xl p-4 border border-white/10 text-center">
                   <p className="text-2xl font-extrabold text-white font-jakarta">{stat.value}</p>

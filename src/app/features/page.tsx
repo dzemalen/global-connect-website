@@ -5,14 +5,14 @@ import PhoneMockup from '@/components/ui/PhoneMockup'
 import AppStoreButtons from '@/components/ui/AppStoreButtons'
 import Link from 'next/link'
 import {
-  MapPin, MessageSquare, MessageCircle, Lightbulb, Calendar, Camera,
+  MapPin, MessageSquare, MessageCircle, Lightbulb, Newspaper, Camera, UtensilsCrossed,
   Globe, Users, Bell, Map, ArrowRight, Shield,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Features — Everything Global Connect Offers',
   description:
-    'Explore all Global Connect features: map-based discovery, city chat, Countrymen and Global modes, local tips, events, travel memories, profiles, and more.',
+    'Explore all Global Connect features: map-based discovery, city chat, Countrymen and Global modes, local tips, posts, travel memories, profiles, and more.',
 }
 
 const tier1Features = [
@@ -20,8 +20,7 @@ const tier1Features = [
     icon: MapPin,
     title: 'Map-Based Discovery',
     desc: 'See travelers and locals on a real-time interactive map. Every pin represents a real person nearby — tap any pin to view their profile, nationality, and bio, then start a conversation.',
-    screens: ['map'],
-    image: '/app/screens/nearby-travelers.png',
+    image: '/app/screens/map.jpg',
     gradient: 'from-blue-500 to-blue-600',
     bg: 'bg-blue-50',
     details: [
@@ -36,12 +35,12 @@ const tier1Features = [
     icon: Globe,
     title: 'Countrymen & Global Modes',
     desc: 'The defining feature of Global Connect. Switch between seeing only people from your own nationality (Countrymen Mode) or everyone around you (Global Mode) with a single tap.',
-    image: '/app/screens/nearby-travelers.png',
+    image: '/app/screens/nearby-global.jpg',
     gradient: 'from-amber-400 to-orange-500',
     bg: 'bg-amber-50',
     details: [
       'Instant mode switching',
-      'Map updates in real time',
+      'Nearby travelers update in real time',
       'Countrymen Mode: your nationality only',
       'Global Mode: all nationalities',
       'City chat filters by mode too',
@@ -50,69 +49,75 @@ const tier1Features = [
   {
     icon: MessageSquare,
     title: 'City Chat',
-    desc: 'Every city has a live, public group chat. Join the conversation wherever you are — ask questions, share tips, meet people, and feel immediately connected to your location.',
-    screens: ['chat'],
+    desc: 'Every city has a live, public group chat. Join automatically based on your location to ask questions, share tips, and meet whoever is there right now.',
+    image: '/app/screens/local-chat.jpg',
     gradient: 'from-sky-500 to-cyan-500',
     bg: 'bg-sky-50',
     details: [
       'Public city-wide chat rooms',
       'Automatically joined based on your location',
-      'Real-time message delivery',
+      'Real-time messages',
       'Filters by Countrymen or Global mode',
-      'Rich media support',
+      'See who’s in your city right now',
     ],
   },
   {
     icon: MessageCircle,
     title: 'Private & Group Chat',
-    desc: 'Message anyone you meet directly or create private group conversations. Plan a day trip, a restaurant visit, or just stay in touch with travelers you\'ve connected with.',
+    desc: 'Message anyone you meet directly, or create private group conversations to plan a day trip, a restaurant visit, or just stay in touch with travelers you’ve connected with.',
+    image: '/app/screens/private-chat.jpg',
     gradient: 'from-cyan-500 to-blue-600',
     bg: 'bg-cyan-50',
     details: [
       'One-on-one private messaging',
       'Create group conversations',
-      'Photo and video sharing in chat',
-      'Message request system for privacy',
-      'Chat settings and user controls',
+      'Message requests for privacy',
+      'Private, group, and local tabs',
+      'Photo sharing in chat',
     ],
   },
   {
     icon: Lightbulb,
     title: 'Tips & Hidden Gems',
-    desc: 'A community-curated guide to every city. Get recommendations for restaurants, hidden spots, nightlife, cultural spots, and more — from people who were actually just there.',
-    screens: ['tips'],
+    desc: 'A community-curated guide to every city. Get recommendations for restaurants, hidden spots, sports, nightlife, and more — from travelers who were actually just there.',
+    image: '/app/screens/tips.jpg',
     gradient: 'from-amber-400 to-orange-500',
     bg: 'bg-amber-50',
     details: [
-      'Multiple tip categories (restaurants, nightlife, sightseeing, and more)',
-      'Community like and dislike voting',
-      'Share your own tips',
-      'Filter tips to countrymen only',
+      'Browse tips by category',
+      'Sort by popular or recent',
+      'Like tips and add your own',
+      'Filter to countrymen or global',
       'Geo-tagged tip locations',
     ],
   },
   {
-    icon: Calendar,
-    title: 'Events Discovery',
-    desc: 'Discover curated local events and festivals happening around you, plus community-posted local meetups. Never miss what\'s on in your city.',
-    screens: ['events'],
-    gradient: 'from-blue-500 to-sky-600',
+    icon: Camera,
+    title: 'Travel Memories',
+    desc: 'Create named trip memories with photos and stops across multiple countries, and build your travel story over time. Like and comment on other travelers’ memories.',
+    image: '/app/screens/memory-detail.jpg',
+    gradient: 'from-blue-600 to-sky-500',
     bg: 'bg-blue-50',
     details: [
-      'Admin-curated festivals and events',
-      'Community-created local events',
-      'Filter by event type',
-      'Event details: venue, date, time, ticket link',
-      'Notifications for new tips and events',
+      'Named trip memories with multiple photos',
+      'Trip stops across countries',
+      'Per-memory privacy controls',
+      'Like and comment on memories',
+      'Visited-countries world map',
     ],
   },
 ]
 
 const tier2Features = [
   {
-    icon: Camera,
-    title: 'Travel Memories',
-    desc: 'Create named trip memories with photos, trip stops across multiple countries, and privacy controls. Like and comment on others\' memories.',
+    icon: Newspaper,
+    title: 'Posts & Community Feed',
+    desc: 'Share posts with photos, a caption, and your location, then browse a live feed of what travelers around you are posting. Like, comment, and share.',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'Best Restaurants',
+    desc: 'Discover standout restaurants recommended by the community and curated by Global Connect, with reviews and locations.',
   },
   {
     icon: Map,
@@ -125,14 +130,9 @@ const tier2Features = [
     desc: 'Follow other travelers, build a network of connections, and view followers and following counts on every profile.',
   },
   {
-    icon: Globe,
-    title: 'Social Feed & Posts',
-    desc: 'Share posts with photos, caption, and location. Like, comment, and share posts from travelers around you.',
-  },
-  {
     icon: Bell,
     title: 'Push Notifications',
-    desc: 'Stay updated on new messages, connection requests, tips, events, and activity from your network.',
+    desc: 'Stay updated on new messages, connection requests, tips, and activity from your network.',
   },
   {
     icon: Shield,
@@ -190,7 +190,6 @@ export default function FeaturesPage() {
             {tier1Features.map((feature, i) => {
               const Icon = feature.icon
               const isEven = i % 2 === 0
-              const screen = (feature.screens?.[0] as 'map' | 'chat' | 'events' | 'profile' | 'tips') ?? 'map'
               return (
                 <div
                   key={feature.title}
@@ -220,7 +219,7 @@ export default function FeaturesPage() {
                     </ul>
                   </AnimatedSection>
                   <AnimatedSection direction={isEven ? 'right' : 'left'} className={`flex justify-center ${!isEven ? 'lg:order-1' : ''}`}>
-                    <PhoneMockup screen={feature.screens ? screen : 'map'} image={feature.image} alt={`Global Connect — ${feature.title}`} size="lg" className="animate-float" />
+                    <PhoneMockup image={feature.image} alt={`Global Connect — ${feature.title}`} size="lg" className="animate-float" />
                   </AnimatedSection>
                 </div>
               )

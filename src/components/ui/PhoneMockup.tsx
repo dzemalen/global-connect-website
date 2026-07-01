@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
-import { Home, Map as MapIcon, PlusSquare, Lightbulb, CalendarDays, Search, MapPin, ThumbsUp, ThumbsDown, ChevronLeft, Music, Globe } from 'lucide-react'
+import { Home, Map as MapIcon, PlusSquare, Lightbulb, Search, MapPin, ThumbsUp, ThumbsDown, ChevronLeft } from 'lucide-react'
 
-type PhoneScreen = 'map' | 'chat' | 'events' | 'profile' | 'tips'
+type PhoneScreen = 'map' | 'chat' | 'profile' | 'tips'
 
 interface PhoneMockupProps {
   screen?: PhoneScreen
@@ -18,8 +18,8 @@ interface PhoneMockupProps {
  * (lib/View/*). Brand values come straight from lib/core/const/app_color.dart:
  *   primary #1577B8 · brandLight #4BADE6 · brandSurface #EAF4FB · navy #00263F
  *   success #24B75A · text #0D121C / #697586 · outline #E3E8EF · scaffold #F7F9FC
- * Bottom nav (Home·Map·Post·Tips·Events) and the segmented Countrymen/Global &
- * Nearby-Events/Community toggles mirror the app exactly.
+ * Bottom nav (Home·Map·Post·Tips) and the segmented Countrymen/Global toggle
+ * mirror the app exactly.
  */
 
 const PRIMARY = '#1577B8'
@@ -48,7 +48,6 @@ const navItems = [
   { icon: MapIcon, label: 'Map' },
   { icon: PlusSquare, label: 'Post' },
   { icon: Lightbulb, label: 'Tips' },
-  { icon: CalendarDays, label: 'Events' },
 ]
 
 function BottomNav({ active }: { active: string }) {
@@ -235,43 +234,6 @@ function TipsScreen() {
   )
 }
 
-/* --------------------------------- EVENTS -------------------------------- */
-function EventsScreen() {
-  const events = [
-    { title: 'Sunset Rooftop Social', date: 'Today · 7PM', loc: 'Sky Bar, Bangkok', going: 34, grad: 'linear-gradient(135deg,#1577B8,#4BADE6)', emoji: '🌅' },
-    { title: 'Loy Krathong Festival', date: 'Sat · 6PM', loc: 'Chao Phraya River', going: 212, grad: 'linear-gradient(135deg,#00263F,#1577B8)', emoji: '🏮' },
-    { title: 'Expat Language Exchange', date: 'Sun · 4PM', loc: 'Craft Beer Lab', going: 56, grad: 'linear-gradient(135deg,#F5A623,#4BADE6)', emoji: '🍺' },
-  ]
-  return (
-    <div className="flex flex-col h-full" style={{ backgroundColor: '#F7F9FC' }}>
-      <StatusBar />
-      <div className="flex-1 overflow-hidden px-3.5 pt-1 flex flex-col gap-3">
-        <div className="flex items-center gap-2 bg-white rounded-xl px-3 py-2" style={{ border: '1px solid #E3E8EF' }}>
-          <Search className="w-3.5 h-3.5 text-slate-400" />
-          <span className="text-[10px] text-slate-400">Search festivals, cities...</span>
-        </div>
-        <SegToggle left="Nearby Events" right="Community" leftActive leftIcon={<Music className="w-3 h-3" />} rightIcon={<Globe className="w-3 h-3" />} />
-        <div className="flex flex-col gap-2.5">
-          {events.map((e, i) => (
-            <div key={i} className="bg-white rounded-2xl p-2.5 flex items-center gap-2.5" style={{ border: '1px solid #E3E8EF' }}>
-              <div className="w-11 h-11 rounded-xl flex items-center justify-center text-lg flex-shrink-0" style={{ background: e.grad }}>{e.emoji}</div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[10px] font-bold text-slate-900 truncate">{e.title}</p>
-                <p className="text-[8px]" style={{ color: '#697586' }}>{e.loc}</p>
-                <div className="flex items-center justify-between mt-0.5">
-                  <span className="text-[8px] font-bold" style={{ color: PRIMARY }}>{e.date}</span>
-                  <span className="text-[8px] text-slate-400">{e.going} going</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <BottomNav active="Events" />
-    </div>
-  )
-}
-
 /* ---------------------------------- CHAT --------------------------------- */
 function ChatScreen() {
   const msgs = [
@@ -362,15 +324,14 @@ function ProfileScreen() {
 const screenComponents: Record<PhoneScreen, React.FC> = {
   map: MapScreen,
   chat: ChatScreen,
-  events: EventsScreen,
   tips: TipsScreen,
   profile: ProfileScreen,
 }
 
 const sizeClasses = {
-  sm: { frame: 'w-44 h-[340px]', inner: 'w-40 h-[312px]' },
-  md: { frame: 'w-56 h-[440px]', inner: 'w-52 h-[408px]' },
-  lg: { frame: 'w-72 h-[560px]', inner: 'w-[268px] h-[528px]' },
+  sm: 'w-44 h-[340px]',
+  md: 'w-56 h-[440px]',
+  lg: 'w-72 h-[560px]',
 }
 
 export default function PhoneMockup({
@@ -381,17 +342,18 @@ export default function PhoneMockup({
   size = 'lg',
 }: PhoneMockupProps) {
   const Screen = screenComponents[screen]
-  const { frame, inner } = sizeClasses[size]
+  const frame = sizeClasses[size]
 
   return (
     <div className={cn('relative', className)}>
       <div className={cn(frame, 'relative rounded-[2.5rem] bg-slate-900 p-1.5 shadow-phone ring-1 ring-white/10')}>
-        <div className={cn(inner, 'rounded-[2rem] overflow-hidden bg-white relative')}>
+        {/* Inner screen fills the frame's padding box, so the bezel is even on all sides */}
+        <div className="w-full h-full rounded-[2rem] overflow-hidden bg-white relative">
           {/* notch */}
           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 bg-slate-900 rounded-full z-20" />
           {image ? (
             // Real app screenshot (already includes its own status bar + bottom nav)
-            <Image src={image} alt={alt} fill sizes="300px" className="object-cover object-top" priority />
+            <Image src={image} alt={alt} fill sizes="300px" className="object-cover object-center" priority />
           ) : (
             <div className="absolute inset-0 pt-7">
               <Screen />

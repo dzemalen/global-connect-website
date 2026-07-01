@@ -57,11 +57,11 @@ const steps = [
     icon: Compass,
     title: 'Explore, connect, and discover',
     tagline: 'The city is alive — join it.',
-    desc: 'Join the city chat to see what\'s happening. Browse local tips and hidden gems. Discover events nearby. Or tap directly on any map pin to start a private conversation.',
+    desc: 'Join the city chat to see what\'s happening. Browse local tips and hidden gems. Or tap directly on any map pin to start a private conversation.',
     tips: [
       'City chat is a great first step — just say hi',
       'Browse tips by category to find what you\'re looking for',
-      'RSVP to events to meet people with shared interests',
+      'Share your own tips and memories to build your reputation',
     ],
     gradient: 'from-blue-500 to-sky-600',
     bg: 'bg-blue-50',

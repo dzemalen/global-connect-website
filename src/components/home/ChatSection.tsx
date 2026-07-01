@@ -75,7 +75,7 @@ export default function ChatSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="right" className="flex justify-center lg:justify-end">
             <div className="relative animate-float">
-              <PhoneMockup screen="chat" size="lg" />
+              <PhoneMockup image="/app/screens/local-chat.jpg" alt="Global Connect — live city chat room" size="lg" />
 
               <div className="absolute -left-10 top-20 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
                 <div className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function ChatSection() {
                       <div key={i} className="w-6 h-6 rounded-full bg-slate-100 border border-white flex items-center justify-center text-xs">{f}</div>
                     ))}
                   </div>
-                  <p className="text-xs font-medium text-slate-700">Bangkok City Chat</p>
+                  <p className="text-xs font-medium text-slate-700">Live city chat</p>
                   <div className="w-2 h-2 bg-green-400 rounded-full" />
                 </div>
               </div>

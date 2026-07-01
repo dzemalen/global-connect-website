@@ -114,7 +114,7 @@ export default function HeroSection() {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative animate-float">
-              <PhoneMockup screen="map" image="/app/screens/nearby-travelers.png" alt="Global Connect — nearby travelers on the map" size="lg" className="phone-glow" />
+              <PhoneMockup screen="map" image="/app/screens/map.jpg" alt="Global Connect — live map of travelers around you" size="lg" className="phone-glow" />
 
               {floatingCards.map((card, i) => (
                 <motion.div

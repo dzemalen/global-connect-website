@@ -1,7 +1,7 @@
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeader from '@/components/ui/SectionHeader'
 import PhoneMockup from '@/components/ui/PhoneMockup'
-import { Heart, Calendar, MapPin } from 'lucide-react'
+import { Heart, MapPin, ThumbsUp } from 'lucide-react'
 
 const tipCategories = [
   { emoji: '🍜', label: 'Food & Dining', count: '2.4K tips' },
@@ -9,7 +9,7 @@ const tipCategories = [
   { emoji: '🌅', label: 'Hidden Spots', count: '1.1K tips' },
   { emoji: '🚇', label: 'Getting Around', count: '670 tips' },
   { emoji: '🛍️', label: 'Shopping', count: '540 tips' },
-  { emoji: '🏖️', label: 'Day Trips', count: '430 tips' },
+  { emoji: '🍽️', label: 'Best Restaurants', count: '1.3K tips' },
 ]
 
 export default function TipsEventsSection() {
@@ -18,7 +18,7 @@ export default function TipsEventsSection() {
       <div className="max-w-7xl mx-auto container-padding">
         <AnimatedSection>
           <SectionHeader
-            badge="Tips & Events"
+            badge="Tips & Recommendations"
             title="Real knowledge from"
             titleHighlight="real travelers."
             subtitle="Forget generic review sites. Global Connect gives you authentic, first-person recommendations from travelers who've just been where you're going."
@@ -29,7 +29,7 @@ export default function TipsEventsSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="left" className="flex justify-center lg:justify-start order-last lg:order-first">
             <div className="relative animate-float">
-              <PhoneMockup image="/app/screens/feed-mountains.png" alt="Global Connect — community feed of travelers sharing places" size="lg" />
+              <PhoneMockup image="/app/screens/tips.jpg" alt="Global Connect — local tips feed with community recommendations" size="lg" />
               <div className="absolute -right-8 top-24 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
                 <div className="flex items-center gap-2">
                   <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
@@ -38,10 +38,10 @@ export default function TipsEventsSection() {
               </div>
               <div className="absolute -left-8 bottom-24 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-3.5 h-3.5 text-blue-500" />
+                  <MapPin className="w-3.5 h-3.5 text-blue-500" />
                   <div>
-                    <p className="text-xs font-semibold text-slate-800">Sunset Rooftop Social</p>
-                    <p className="text-[10px] text-slate-500">Today, 7PM · 34 going</p>
+                    <p className="text-xs font-semibold text-slate-800">Thip Samai, Bangkok</p>
+                    <p className="text-[10px] text-slate-500">Local food gem · 2h ago</p>
                   </div>
                 </div>
               </div>
@@ -73,34 +73,31 @@ export default function TipsEventsSection() {
                 </div>
               </div>
 
-              {/* Events block */}
+              {/* Community-voted recommendations block */}
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center">
-                    <Calendar className="w-4 h-4 text-blue-600" />
+                    <ThumbsUp className="w-4 h-4 text-blue-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 font-jakarta">Events Nearby</h3>
+                  <h3 className="text-xl font-bold text-slate-900 font-jakarta">Community-voted recommendations</h3>
                 </div>
                 <p className="text-slate-600 leading-relaxed mb-5">
-                  From traveler meetups to local cultural events, concerts, markets, and community gatherings — see what&apos;s happening in your city right now and join the action.
+                  Every tip and restaurant is ranked by real travelers. Upvote what&apos;s great, filter to your countrymen, and trust recommendations from people who actually went.
                 </p>
                 <div className="space-y-3">
                   {[
-                    { emoji: '🌅', title: 'Sunset Rooftop Social', time: 'Today, 7PM', going: 34 },
-                    { emoji: '🍜', title: 'Street Food Tour', time: 'Sat, 6PM', going: 12 },
-                    { emoji: '🏖️', title: 'Island Day Trip', time: 'Sun, 7AM', going: 22 },
-                  ].map((event) => (
-                    <div key={event.title} className="flex items-center gap-3 bg-white rounded-xl p-3.5 border border-slate-100 shadow-sm">
-                      <span className="text-xl">{event.emoji}</span>
-                      <div className="flex-1">
-                        <p className="text-sm font-semibold text-slate-900">{event.title}</p>
-                        <div className="flex items-center gap-3 mt-0.5">
-                          <span className="text-xs text-blue-600 font-medium">{event.time}</span>
-                          <span className="text-xs text-slate-400">{event.going} going</span>
-                        </div>
+                    { emoji: '🍜', title: 'Best pad see ew in the old town', place: 'Thip Samai, Bangkok', likes: 47 },
+                    { emoji: '🏛️', title: 'Hidden rooftop with skyline views', place: 'Sukhumvit 38', likes: 31 },
+                    { emoji: '🍽️', title: 'Underwater dining experience', place: 'Ithaa, Maldives', likes: 88 },
+                  ].map((tip) => (
+                    <div key={tip.title} className="flex items-center gap-3 bg-white rounded-xl p-3.5 border border-slate-100 shadow-sm">
+                      <span className="text-xl">{tip.emoji}</span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-slate-900 truncate">{tip.title}</p>
+                        <p className="text-xs text-slate-500">{tip.place}</p>
                       </div>
-                      <div className="px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold">
-                        Join
+                      <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold flex-shrink-0">
+                        <ThumbsUp className="w-3 h-3" /> {tip.likes}
                       </div>
                     </div>
                   ))}

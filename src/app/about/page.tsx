@@ -29,7 +29,7 @@ const values = [
   {
     icon: Users,
     title: 'Community-driven',
-    desc: 'The best version of Global Connect is built by its users. Tips, reviews, events, and city knowledge — the community makes it richer every day.',
+    desc: 'The best version of Global Connect is built by its users. Tips, reviews, and city knowledge — the community makes it richer every day.',
   },
 ]
 

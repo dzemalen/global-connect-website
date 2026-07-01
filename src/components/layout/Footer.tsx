@@ -45,7 +45,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
-              Go Global. Stay Connected. Discover travelers, locals, tips, and events around you — wherever you are in the world.
+              Go Global. Stay Connected. Discover travelers, locals, and tips around you — wherever you are in the world.
             </p>
           </div>
 

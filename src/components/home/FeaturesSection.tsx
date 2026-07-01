@@ -1,6 +1,6 @@
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeader from '@/components/ui/SectionHeader'
-import { MapPin, MessageSquare, MessageCircle, Lightbulb, Calendar, Camera, ArrowRight } from 'lucide-react'
+import { MapPin, MessageSquare, MessageCircle, Lightbulb, Newspaper, Camera, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
@@ -37,9 +37,9 @@ const features = [
     border: 'border-amber-100',
   },
   {
-    icon: Calendar,
-    title: 'Events Nearby',
-    desc: "Discover local meetups and experiences happening around you. Never miss what's going on in your city.",
+    icon: Newspaper,
+    title: 'Posts & Community Feed',
+    desc: 'Share posts with photos, a caption, and your location — then browse a live feed of what travelers around you are posting.',
     gradient: 'from-blue-500 to-sky-600',
     bg: 'bg-blue-50',
     border: 'border-blue-100',
@@ -63,7 +63,7 @@ export default function FeaturesSection() {
             badge="Everything you need"
             title="One app."
             titleHighlight="Every connection."
-            subtitle="Global Connect brings together all the tools a modern traveler needs — people, tips, events, and community — in one seamless experience."
+            subtitle="Global Connect brings together all the tools a modern traveler needs — people, tips, and community — in one seamless experience."
           />
         </AnimatedSection>
 

@@ -75,7 +75,7 @@ export default function MemoriesSection() {
           {/* Phone mockup */}
           <AnimatedSection direction="right" className="flex justify-center lg:justify-end">
             <div className="relative animate-float-delayed">
-              <PhoneMockup screen="profile" image="/app/screens/world-journey.png" alt="Global Connect — My World Journey, countries visited" size="lg" />
+              <PhoneMockup screen="profile" image="/app/screens/memory-detail.jpg" alt="Global Connect — a shared travel memory from London" size="lg" />
 
               {/* Real travel photos, styled as shared memories */}
               <div className="absolute -left-10 top-6 w-28 rotate-[-6deg] bg-white rounded-2xl shadow-card-xl border border-slate-100 p-1.5 hidden sm:block">
@@ -102,8 +102,8 @@ export default function MemoriesSection() {
                 <p className="text-[10px] text-slate-500">explored worldwide</p>
               </div>
               <div className="absolute -left-8 bottom-10 px-4 py-3 bg-white rounded-2xl shadow-card border border-slate-100">
-                <p className="text-xs font-semibold text-slate-800">🗺️ 4 continents</p>
-                <p className="text-[10px] text-slate-500">out of 7</p>
+                <p className="text-xs font-semibold text-slate-800">📸 Travel memory</p>
+                <p className="text-[10px] text-slate-500">London, UK</p>
               </div>
             </div>
           </AnimatedSection>

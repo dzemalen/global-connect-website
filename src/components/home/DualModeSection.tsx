@@ -162,11 +162,11 @@ export default function DualModeSection() {
                     </div>
                   </div>
 
-                  {/* Visual: real app screenshot (one tap switches Countrymen / Global) */}
+                  {/* Visual: real app screenshot (Global mode — everyone nearby) */}
                   <div className="hidden lg:flex items-center justify-center p-10 lg:p-16 relative">
                     <PhoneMockup
-                      image="/app/screens/nearby-travelers.png"
-                      alt="Global Connect — switch between Countrymen and Global modes"
+                      image="/app/screens/nearby-global.jpg"
+                      alt="Global Connect — Global mode showing all nearby travelers"
                       size="md"
                       className="animate-float"
                     />

@@ -15,7 +15,7 @@ const faqGroups = [
     items: [
       {
         q: 'What exactly is Global Connect?',
-        a: 'Global Connect is the mobile app designed to help you explore the world in a new way. Find hidden local gems, exciting events, and meet new friends — whether you\'re traveling or just want to experience more in your own city. We\'re all about connecting you to authentic experiences and people.',
+        a: 'Global Connect is the mobile app designed to help you explore the world in a new way. Find hidden local gems, great local tips, and meet new friends — whether you\'re traveling or just want to experience more in your own city. We\'re all about connecting you to authentic experiences and people.',
       },
       {
         q: 'Who is this app perfect for?',
@@ -32,19 +32,19 @@ const faqGroups = [
     items: [
       {
         q: "What are Global Connect's main features?",
-        a: "With Global Connect, you can:\n• Choose your travel mode: decide whether you want to see content and chat with people globally, or only with those from your own home country.\n• Chat locally & privately: participate in chats with everyone in the city you are in, or chat one-on-one and in private groups.\n• Find and share tips: discover the best local tips on restaurants, places, and hidden gems — and share your own!\n• Browse events: see what's happening nearby, from concerts and festivals to social gatherings.\n• Review places: read and leave reviews for restaurants, bars, and other spots you visit.\n• Show off your travels: keep a personal profile with an interactive map showing all the countries you've visited.",
+        a: "With Global Connect, you can:\n• Choose your travel mode: decide whether you want to see content and chat with people globally, or only with those from your own home country.\n• Chat locally & privately: participate in chats with everyone in the city you are in, or chat one-on-one and in private groups.\n• Find and share tips: discover the best local tips on restaurants, places, and hidden gems — and share your own!\n• Review places: read and leave reviews for restaurants, bars, and other spots you visit.\n• Show off your travels: keep a personal profile with an interactive map showing all the countries you've visited.",
       },
       {
         q: "What's the difference between \"Countrymen\" and \"Global\" mode?",
-        a: 'Countrymen Mode: perfect for you if you want to meet and see content primarily from people of your own nationality while abroad. The local chat, for example, will only include countrymen.\nGlobal Mode: opens up the app to everyone! Meet people from all over the world and see all available tips and events, regardless of nationality. You can easily switch between modes anytime within the app.',
+        a: 'Countrymen Mode: perfect for you if you want to meet and see content primarily from people of your own nationality while abroad. The local chat, for example, will only include countrymen.\nGlobal Mode: opens up the app to everyone! Meet people from all over the world and see all available tips, regardless of nationality. You can easily switch between modes anytime within the app.',
       },
       {
         q: 'How does the local chat work?',
         a: 'The local chat is a shared conversation for all Global Connect users who are physically present in the same city as you. You\'ll automatically join the chat for your current location and can only send messages there. The content within the local chat will also filter based on whether you\'ve selected "Countrymen" or "Global" mode.',
       },
       {
-        q: 'Can I add events or recommend restaurants myself?',
-        a: 'You can definitely share your own tips and write reviews for restaurants and places you\'ve visited — that\'s a key part of the app! However, the official events and new restaurants are added by Global Connect administrators to ensure quality and relevance, often in collaboration with our partners.',
+        q: 'Can I recommend restaurants and share tips myself?',
+        a: 'Absolutely — sharing your own tips and writing reviews for restaurants and places you\'ve visited is a key part of the app! New restaurants are also curated by Global Connect administrators to ensure quality and relevance, often in collaboration with our partners.',
       },
     ],
   },

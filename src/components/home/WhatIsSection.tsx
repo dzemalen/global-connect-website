@@ -1,6 +1,6 @@
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeader from '@/components/ui/SectionHeader'
-import { MapPin, MessageSquare, Lightbulb, Calendar, X, Check } from 'lucide-react'
+import { MapPin, MessageSquare, Lightbulb, Camera, X, Check } from 'lucide-react'
 
 const pillars = [
   {
@@ -28,9 +28,9 @@ const pillars = [
     border: 'border-amber-100',
   },
   {
-    icon: Calendar,
-    title: 'Events made for travelers',
-    desc: 'Meetups, experiences, and local events curated for people who are always on the move.',
+    icon: Camera,
+    title: 'Your travel story',
+    desc: 'Save trip memories with photos, track every country you’ve explored, and build your travel identity over time.',
     color: 'from-blue-500 to-sky-600',
     bg: 'bg-blue-50',
     border: 'border-blue-100',
@@ -41,7 +41,7 @@ const before = [
   'Every new city feels like starting from zero',
   'Guidebook tips are generic and months out of date',
   'Meeting people is awkward and hit-or-miss',
-  'Events and meetups are nearly impossible to find',
+  'Local recommendations are scattered across a dozen apps',
   'No one to explore with when you arrive',
 ]
 
@@ -49,7 +49,7 @@ const after = [
   "Arrive and see who's already there waiting",
   'Get real tips from people actually in the city today',
   'Connect through shared culture, language, or curiosity',
-  'Events and communities surface automatically',
+  'Local tips and communities surface automatically',
   'Always have someone to explore with',
 ]
 

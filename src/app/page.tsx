@@ -16,7 +16,7 @@ import FinalCTASection from '@/components/home/FinalCTASection'
 export const metadata: Metadata = {
   title: 'Global Connect — Meet Travelers & Discover Local Experiences',
   description:
-    'Global Connect helps travelers, expats, and locals discover authentic experiences and meet people nearby. Find travelers on a map, join city chats, get local tips, and discover events — wherever you are.',
+    'Global Connect helps travelers, expats, and locals discover authentic experiences and meet people nearby. Find travelers on a map, join city chats, and get local tips — wherever you are.',
 }
 
 export default function HomePage() {

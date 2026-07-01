@@ -8,7 +8,7 @@ import { Users, TrendingUp, Globe, Star, ArrowRight, CheckCircle } from 'lucide-
 const partnerTypes = [
   { emoji: '🍽️', title: 'Restaurants & Cafés', desc: 'Get discovered by travelers actively looking for local dining experiences.' },
   { emoji: '🍺', title: 'Bars & Nightlife', desc: 'Reach international visitors and expats seeking social venues.' },
-  { emoji: '🎭', title: 'Event Organizers', desc: 'Promote your events to a highly engaged audience of travelers and locals.' },
+  { emoji: '🏛️', title: 'Attractions & Museums', desc: 'Reach travelers looking for the best things to see and do while exploring your city.' },
   { emoji: '🏨', title: 'Hostels & Boutique Hotels', desc: 'Connect with budget-conscious adventurers and backpackers.' },
   { emoji: '🗺️', title: 'Tour Operators', desc: 'Showcase your experiences to people actively exploring your city.' },
   { emoji: '🛍️', title: 'Local Shops & Markets', desc: 'Get visibility among international shoppers looking for authentic finds.' },
@@ -23,7 +23,7 @@ const benefits = [
   {
     icon: Users,
     title: 'Highly engaged users',
-    desc: 'Global Connect users explore local food, events, and experiences — your listing reaches people at the exact moment they are deciding where to go.',
+    desc: 'Global Connect users explore local food, tips, and experiences — your listing reaches people at the exact moment they are deciding where to go.',
   },
   {
     icon: TrendingUp,
@@ -115,7 +115,7 @@ function PartnerForm() {
           >
             <option>Restaurant / Café</option>
             <option>Bar / Nightlife</option>
-            <option>Event organizer</option>
+            <option>Attraction / Museum</option>
             <option>Hostel / Hotel</option>
             <option>Tour operator</option>
             <option>Other</option>
@@ -199,7 +199,7 @@ export default function ForPartnersPage() {
               {[
                 { value: 'Free', label: 'For users — built-in audience' },
                 { value: 'Local', label: 'Geo-targeted to your city' },
-                { value: 'Direct', label: 'In-app tips & events visibility' },
+                { value: 'Direct', label: 'In-app tips & recommendations visibility' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-3xl font-extrabold text-white font-jakarta">{stat.value}</p>

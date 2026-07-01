@@ -28,7 +28,7 @@ const steps = [
     number: '04',
     icon: Compass,
     title: 'Explore, chat, discover',
-    desc: 'Join the city chat, browse local tips, find events, or tap directly on a pin to connect one-on-one. Your city\'s community is already active — just jump in.',
+    desc: 'Join the city chat, browse local tips, or tap directly on a pin to connect one-on-one. Your city\'s community is already active — just jump in.',
     gradient: 'from-blue-500 to-sky-600',
   },
   {
