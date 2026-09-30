@@ -90,7 +90,7 @@ const sections: Section[] = [
   {
     title: '10. Contact Us',
     paragraphs: ['If you have any questions about these Terms, please contact us at:'],
-    email: 'partnership@global-connect.ai',
+    email: 'nidal@global-connect.ai',
   },
 ]
 
