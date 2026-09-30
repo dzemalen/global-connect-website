@@ -22,6 +22,12 @@ const nextConfig = {
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]
   },
+  // /terms is a short alias for the Terms of Service page at /terms-of-use (the
+  // URL linked from the footer and cookie banner). Non-permanent (307) so the
+  // canonical URL can be switched later without browsers caching the redirect.
+  async redirects() {
+    return [{ source: '/terms', destination: '/terms-of-use', permanent: false }]
+  },
 }
 
 export default nextConfig

@@ -49,7 +49,7 @@ export default function CookieConsent() {
             </Link>{' '}
             and{' '}
             <Link href="/terms-of-use" className="font-semibold text-blue-600 hover:underline">
-              Terms of Use
+              Terms of Service
             </Link>
             .
           </p>
